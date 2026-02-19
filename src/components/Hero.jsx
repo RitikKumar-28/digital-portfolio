@@ -43,7 +43,7 @@ const Hero = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.8 }}
                     >
-                        I am a Computer Science and Engineering student specializing in Cybersecurity, with a strong interest in securing systems, networks, and web applications. I enjoy exploring areas such as penetration testing, network security, digital forensics, and vulnerability assessment. I am continuously learning and building hands-on projects to strengthen my skills in ethical hacking and defensive security.
+                        I am Ritik Kumar, a Computer Science and Engineering undergraduate specializing in Cybersecurity at Lovely Professional University. I am passionate about securing systems, networks, and web applications, with growing experience in ethical hacking and defensive security.
                     </motion.p>
 
                     <motion.div
@@ -53,13 +53,28 @@ const Hero = () => {
                         transition={{ delay: 1 }}
                     >
                         {/* Replace the '#' with your actual GitHub PDF link (e.g., https://raw.githubusercontent.com/username/repo/main/CV.pdf) */}
-                        <a href="https://github.com/RitikKumar-28/certificates/blob/main/RitikKumar_CV_2025.pdf" target="_blank" rel="noreferrer" className="btn btn-primary">
+                        <a href="https://drive.google.com/file/d/10U2vfwiMz1KO_PA0cxNF_lJAVmiLopHf/view?usp=sharing" target="_blank" rel="noreferrer" className="btn btn-primary">
                             View CV <ArrowRight size={18} />
                         </a>
                         <div className="hero-socials">
-                            <a href="https://github.com/RitikKumar-28" target="_blank" rel="noreferrer" className="social-icon glass"><Github size={20} /></a>
-                            <a href="https://www.linkedin.com/in/ritik-kumar28" target="_blank" rel="noreferrer" className="social-icon glass"><Linkedin size={20} /></a>
-                            <a href="mailto:ritikkumar620065@gmail.com" className="social-icon glass"><Mail size={20} /></a>
+                            <div className="icon-content">
+                                <a href="https://github.com/RitikKumar-28" target="_blank" rel="noreferrer" data-social="github">
+                                    <div className="filled"></div>
+                                    <Github size={20} />
+                                </a>
+                            </div>
+                            <div className="icon-content">
+                                <a href="https://www.linkedin.com/in/ritik-kumar28" target="_blank" rel="noreferrer" data-social="linkedin">
+                                    <div className="filled"></div>
+                                    <Linkedin size={20} />
+                                </a>
+                            </div>
+                            <div className="icon-content">
+                                <a href="mailto:ritikkumar620065@gmail.com" data-social="mail">
+                                    <div className="filled"></div>
+                                    <Mail size={20} />
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
                 </motion.div>

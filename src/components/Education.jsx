@@ -61,12 +61,14 @@ const Education = () => {
                             >
                                 <GraduationCap size={20} />
                             </motion.div>
-                            <div className="timeline-content glass">
-                                <div className="edu-card-glow"></div>
-                                <span className="edu-year">{edu.year}</span>
-                                <h3>{edu.degree}</h3>
-                                <h4 className="edu-institution">{edu.institution}</h4>
-                                <p>{edu.description}</p>
+                            <div className="uiverse-box">
+                                <div className="timeline-content uiverse-box-inner glass">
+                                    <div className="edu-card-glow"></div>
+                                    <span className="edu-year">{edu.year}</span>
+                                    <h3>{edu.degree}</h3>
+                                    <h4 className="edu-institution">{edu.institution}</h4>
+                                    <p>{edu.description}</p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

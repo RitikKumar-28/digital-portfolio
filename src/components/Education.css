@@ -1,3 +1,11 @@
+.education-section {
+    padding: 4rem 0 8rem 0;
+}
+
+.education-section .section-header {
+    margin-bottom: 2.5rem;
+}
+
 .education-timeline {
     max-width: 900px;
     margin: 0 auto;

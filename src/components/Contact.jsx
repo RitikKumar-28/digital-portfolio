@@ -38,21 +38,36 @@ const Contact = () => {
                         viewport={{ once: true }}
                     >
                         <div className="info-item">
-                            <div className="info-icon glass"><Mail size={20} /></div>
+                            <div className="icon-content">
+                                <a href="mailto:ritikkumar620065@gmail.com" data-social="mail">
+                                    <div className="filled"></div>
+                                    <Mail size={20} />
+                                </a>
+                            </div>
                             <div className="info-text">
                                 <h3>Email</h3>
                                 <p>ritikkumar620065@gmail.com</p>
                             </div>
                         </div>
                         <div className="info-item">
-                            <div className="info-icon glass"><MapPin size={20} /></div>
+                            <div className="icon-content">
+                                <a href="https://maps.google.com" target="_blank" rel="noreferrer" data-social="location">
+                                    <div className="filled"></div>
+                                    <MapPin size={20} />
+                                </a>
+                            </div>
                             <div className="info-text">
                                 <h3>Location</h3>
-                                <p>Hazaribagh,Jharkhand</p>
+                                <p>Hazaribagh, Jharkhand</p>
                             </div>
                         </div>
                         <div className="info-item">
-                            <div className="info-icon glass"><Phone size={20} /></div>
+                            <div className="icon-content">
+                                <a href="tel:+916200655970" data-social="phone">
+                                    <div className="filled"></div>
+                                    <Phone size={20} />
+                                </a>
+                            </div>
                             <div className="info-text">
                                 <h3>Phone</h3>
                                 <p>+91 6200655970</p>
@@ -62,64 +77,81 @@ const Contact = () => {
                         <div className="contact-socials">
                             <h3>Follow Me</h3>
                             <div className="social-links">
-                                <a href="https://www.linkedin.com/in/ritik-kumar28" target="_blank" rel="noreferrer" className="social-link glass"><Linkedin size={20} /></a>
-                                <a href="https://github.com/RitikKumar-28" target="_blank" rel="noreferrer" className="social-link glass"><Github size={20} /></a>
-                                <a href="mailto:ritikkumar620065@gmail.com" className="social-link glass"><Mail size={20} /></a>
+                                <div className="icon-content">
+                                    <a href="https://www.linkedin.com/in/ritik-kumar28" target="_blank" rel="noreferrer" data-social="linkedin">
+                                        <div className="filled"></div>
+                                        <Linkedin size={20} />
+                                    </a>
+                                </div>
+                                <div className="icon-content">
+                                    <a href="https://github.com/RitikKumar-28" target="_blank" rel="noreferrer" data-social="github">
+                                        <div className="filled"></div>
+                                        <Github size={20} />
+                                    </a>
+                                </div>
+                                <div className="icon-content">
+                                    <a href="mailto:ritikkumar620065@gmail.com" data-social="mail">
+                                        <div className="filled"></div>
+                                        <Mail size={20} />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
 
-                    <motion.form
-                        className="contact-form glass"
-                        onSubmit={handleSubmit}
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Your Email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="Subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <textarea
-                                name="message"
-                                rows="5"
-                                placeholder="Your Message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                            ></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-primary submit-btn">
-                            Send Message <Send size={18} />
-                        </button>
-                    </motion.form>
+                    <div className="contact-form-card">
+                        <motion.form
+                            className="contact-form-inner glass"
+                            onSubmit={handleSubmit}
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    placeholder="Subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <textarea
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Your Message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                ></textarea>
+                            </div>
+                            <button type="submit" className="btn btn-primary submit-btn">
+                                Send Message <Send size={18} />
+                            </button>
+                        </motion.form>
+                    </div>
                 </div>
             </div>
         </section>

@@ -41,33 +41,34 @@ const Projects = () => {
 
                 <div className="projects-grid">
                     {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            className="project-card glass"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <div className="project-image-wrapper">
-                                <img src={project.image} alt={project.title} className="project-image" />
-                                <div className="project-overlay">
-                                    <div className="project-links">
-                                        <a href={project.github} className="project-link-icon glass"><Github size={20} /></a>
-                                        <a href={project.link} className="project-link-icon glass"><ExternalLink size={20} /></a>
+                        <div className="uiverse-box" key={index}>
+                            <motion.div
+                                className="project-card uiverse-box-inner glass"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <div className="project-image-wrapper">
+                                    <img src={project.image} alt={project.title} className="project-image" />
+                                    <div className="project-overlay">
+                                        <div className="project-links">
+                                            <a href={project.github} className="project-link-icon glass"><Github size={20} /></a>
+                                            <a href={project.link} className="project-link-icon glass"><ExternalLink size={20} /></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="project-info">
-                                <h3>{project.title}</h3>
-                                <p>{project.description}</p>
-                                <div className="project-tech">
-                                    {project.tech.map((t, i) => (
-                                        <span key={i} className="tech-tag">{t}</span>
-                                    ))}
+                                <div className="project-info">
+                                    <h3>{project.title}</h3>
+                                    <p>{project.description}</p>
+                                    <div className="project-tech">
+                                        {project.tech.map((t, i) => (
+                                            <span key={i} className="tech-tag">{t}</span>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

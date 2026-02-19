@@ -1,7 +1,72 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Award, CheckCircle, ShieldAlert, ExternalLink } from 'lucide-react';
 import './Certifications.css';
+
+const CertificationCard = ({ cert, index }) => {
+    const cardRef = useRef(null);
+
+    // Motion values for mouse position
+    const x = useMotionValue(0.5);
+    const y = useMotionValue(0.5);
+
+    const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+    const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
+
+    const rotateX = useTransform(mouseYSpring, [0, 1], ["-12deg", "12deg"]);
+    const rotateY = useTransform(mouseXSpring, [0, 1], ["12deg", "-12deg"]);
+
+    const handleMouseMove = (e) => {
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const xPct = (e.clientX - rect.left) / rect.width;
+        const yPct = (e.clientY - rect.top) / rect.height;
+        x.set(xPct);
+        y.set(yPct);
+
+        const lightX = (0.5 - xPct) * 40;
+        const lightY = (0.5 - yPct) * 40;
+        cardRef.current.style.setProperty('--light-x', `${lightX}%`);
+        cardRef.current.style.setProperty('--light-y', `${lightY}%`);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0.5);
+        y.set(0.5);
+    };
+
+    return (
+        <div className="uiverse-box">
+            <motion.div
+                ref={cardRef}
+                className="cert-card uiverse-box-inner glass"
+                style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+                <div className="cert-image-wrapper">
+                    <img src={cert.image} alt={cert.title} className="cert-image" />
+                    <div className="cert-overlay">
+                        <div className="cert-links">
+                            <a href={cert.link} target="_blank" rel="noopener noreferrer" className="cert-link-icon glass">
+                                <ExternalLink size={20} />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div className="cert-info">
+                    <div className="cert-badge">{cert.date}</div>
+                    <h3>{cert.title}</h3>
+                    <p className="cert-issuer">{cert.issuer}</p>
+                </div>
+            </motion.div>
+        </div>
+    );
+};
 
 const Certifications = () => {
     const certifications = [
@@ -65,35 +130,7 @@ const Certifications = () => {
 
                 <div className="certs-grid">
                     {certifications.map((cert, index) => (
-                        <motion.div
-                            key={index}
-                            className="cert-card glass"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <div className="cert-image-wrapper">
-                                <img src={cert.image} alt={cert.title} className="cert-image" />
-                                <div className="cert-overlay">
-                                    <div className="cert-links">
-                                        <a
-                                            href={cert.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="cert-link-icon glass"
-                                        >
-                                            <ExternalLink size={20} />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="cert-info">
-                                <div className="cert-badge">{cert.date}</div>
-                                <h3>{cert.title}</h3>
-                                <p className="cert-issuer">{cert.issuer}</p>
-                            </div>
-                        </motion.div>
+                        <CertificationCard key={index} cert={cert} index={index} />
                     ))}
                 </div>
             </div>
@@ -102,4 +139,3 @@ const Certifications = () => {
 };
 
 export default Certifications;
-

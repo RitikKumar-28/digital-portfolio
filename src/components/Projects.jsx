@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import pscImg from '../assets/images/PSC.png';
+import sfeImg from '../assets/images/SFE.png';
+import ardImg from '../assets/images/ARD.png';
 import './Projects.css';
 
 const Projects = () => {
@@ -11,7 +14,7 @@ const Projects = () => {
             tech: ['HTML', 'CSS', 'JavaScript', 'Flask (Optional)'],
             link: 'https://ritikkumar-28.github.io/password-strength-checker/',
             github: 'https://github.com/RitikKumar-28/password-strength-checker',
-            image: 'https://raw.githubusercontent.com/RitikKumar-28/Projects-Images/refs/heads/main/Screenshot%202026-02-05%20232738.png'
+            image: pscImg
         },
         {
             title: 'Secure File Encryption Tool',
@@ -19,7 +22,7 @@ const Projects = () => {
             tech: ['Python', 'Flask', 'HTML', 'CSS', 'JavaScript', 'AES-256', 'PBKDF2'],
             link: 'https://advanced-encryption-analysis2.vercel.app/',
             github: 'https://github.com/RitikKumar-28/advanced-encryption-analysis.02',
-            image: 'https://raw.githubusercontent.com/RitikKumar-28/Projects-Images/refs/heads/main/Screenshot%202026-02-07%20193838.png'
+            image: sfeImg
         },
         {
             title: 'AI Ransomware Detection',
@@ -27,7 +30,7 @@ const Projects = () => {
             tech: ['Python', 'FastAPI', 'Scikit-Learn', 'Watchdog', 'Psutil', 'React', 'Vite', 'Recharts', 'Framer Motion', 'WebSockets', 'Machine Learning'],
             link: 'https://github.com/RitikKumar-28/ai-ransomware-detection',
             github: 'https://github.com/RitikKumar-28/ai-ransomware-detection',
-            image: 'https://github.com/RitikKumar-28/Projects-Images/blob/main/ai-ransomware-detection.png?raw=true'
+            image: ardImg
         }
     ];
 

@@ -27,25 +27,68 @@
 
 .cert-image-wrapper {
     position: relative;
-    height: 240px;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
-    background: #f8fafc;
+    background: var(--bg-tertiary, #f8fafc); /* Subtle gray background so white certs pop */
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid var(--glass-border);
+    padding: 0.5rem; /* Reduced padding to softly zoom in without cropping */
+    box-sizing: border-box;
 }
 
 .cert-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: contain; /* Guarantee full visibility of all text */
+    object-position: center;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)); /* Makes it look like a physical document */
     transition: transform 0.5s ease;
-    padding: 1rem;
 }
 
 .cert-card:hover .cert-image {
+    transform: scale(1.05); /* Gentler hover to stay within padding */
+}
+
+.cert-image-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+.cert-image-fallback svg.cert-icon {
+    width: 80px;
+    height: 80px;
+    color: white;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+.cert-card:hover .cert-image-fallback {
     transform: scale(1.1);
+}
+
+.gradient-bg-0 {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.gradient-bg-1 {
+    background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+}
+
+.gradient-bg-2 {
+    background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+}
+
+.gradient-bg-3 {
+    background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+}
+
+.gradient-bg-4 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
 .cert-overlay {

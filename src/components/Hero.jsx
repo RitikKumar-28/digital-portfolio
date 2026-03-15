@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import profileImg from '../assets/images/Profile.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -105,7 +106,7 @@ const Hero = () => {
                             whileHover={{ scale: 1.05, rotate: 2 }}
                         >
                             <img
-                                src="https://raw.githubusercontent.com/RitikKumar-28/certificates/refs/heads/main/Pfp%202.png"
+                                src={profileImg}
                                 alt="Profile"
                                 className="hero-image"
                             />

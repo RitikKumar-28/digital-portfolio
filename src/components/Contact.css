@@ -69,9 +69,7 @@
 /* Handled by global .icon-content styles */
 
 .contact-form-card {
-    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
     border-radius: 20px;
-    transition: all .3s;
 }
 
 .contact-form-inner {
@@ -81,16 +79,7 @@
     flex-direction: column;
     gap: 1.75rem;
     border-radius: 20px;
-    transition: all .2s;
     border: 1px solid var(--glass-border);
-}
-
-.contact-form-inner:hover {
-    transform: scale(0.98);
-}
-
-.contact-form-card:hover {
-    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
 }
 
 .form-group input,

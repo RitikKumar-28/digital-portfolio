@@ -1,7 +1,5 @@
 # Ritik Kumar - Cybersecurity Portfolio
 
-![Portfolio Preview](./src/assets/images/Profile.png) *(Note: Add a high-quality screenshot of your entire portfolio interface here instead of just the profile image)*
-
 Welcome to my personal digital portfolio! I am **Ritik Kumar**, a Computer Science and Engineering undergraduate specializing in Cybersecurity at Lovely Professional University. I am passionate about securing systems, networks, and web applications, with growing experience in ethical hacking and defensive security.
 
 This repository contains the source code for my interactive, responsive, and beautifully designed web portfolio, built with modern web technologies.

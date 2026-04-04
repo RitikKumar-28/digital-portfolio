@@ -54,7 +54,7 @@ const Hero = () => {
                         transition={{ delay: 1 }}
                     >
                         {/* Replace the '#' with your actual GitHub PDF link (e.g., https://raw.githubusercontent.com/username/repo/main/CV.pdf) */}
-                        <a href="https://drive.google.com/file/d/10U2vfwiMz1KO_PA0cxNF_lJAVmiLopHf/view?usp=sharing" target="_blank" rel="noreferrer" className="btn btn-primary">
+                        <a href="https://drive.google.com/file/d/1kaGzaIj8bK_9HHgIeOBhgCMP1C_2KJWk/view?usp=sharing" target="_blank" rel="noreferrer" className="btn btn-primary">
                             View CV <ArrowRight size={18} />
                         </a>
                         <div className="hero-socials">
